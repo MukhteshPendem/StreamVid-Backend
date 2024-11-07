@@ -2,11 +2,9 @@ package org.mukhtesh.streamerbackend.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.management.ConstructorParameters;
 import java.time.LocalDate;
 
 @Entity
@@ -16,9 +14,6 @@ import java.time.LocalDate;
 public class Video {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
     private String title;
 
     private String description;
