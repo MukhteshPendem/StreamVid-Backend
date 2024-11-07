@@ -5,6 +5,7 @@ import org.mukhtesh.streamerbackend.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VideoService {
@@ -25,12 +26,8 @@ public class VideoService {
         videoRepository.save(video);
     }
 
-    public void deleteVideo(Long id) {
-        videoRepository.deleteById(id);
-    }
-
-    public Video findVideoByTitle(String title) {
-       return videoRepository.findByTitle(title);
+    public Optional<Video> findVideoByTitle(String title) {
+        return videoRepository.findVideoByTitle(title);
     }
 
 }

@@ -4,9 +4,11 @@ import org.mukhtesh.streamerbackend.entity.Video;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface VideoRepository extends JpaRepository<Video, Long> {
+import java.util.Optional;
 
-    Video findByTitle(String title);
+@Repository
+public interface VideoRepository extends JpaRepository<Video, String> {
+
+    Optional<Video> findVideoByTitle(String title);
 
 }
